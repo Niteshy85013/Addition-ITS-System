@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}Addition Tutor{% endblock %}</title>
+    <style>
+      body {
+        font-family: Arial;
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+      .form-group {
+        margin: 15px 0;
+      }
+      input,
+      button {
+        padding: 8px;
+        font-size: 16px;
+      }
+      button {
+        background: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      .flash {
+        color: red;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <div class="flash">{{ messages[0] }}</div>
+    {% endif %} {% endwith %} {% block content %}{% endblock %}
+  </body>
+</html>

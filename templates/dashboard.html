@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - Addition Tutor{% endblock %}
+
+{% block content %}
+
+<style>
+  body {
+    background: #f3f4f6;
+    font-family: 'Inter', sans-serif;
+    color: #1f2937;
+  }
+
+  .dashboard-container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 30px 20px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 20px;
+  }
+
+  .action-links {
+    margin-bottom: 25px;
+  }
+  .action-links a {
+    margin-right: 18px;
+    padding: 8px 14px;
+    /* background: #4c8bfa;
+    color: white; */
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+  .action-links a:hover {
+    background: #3973d1;
+  }
+
+  /* Table Styling */
+  .attempt-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  .attempt-table thead {
+    background: #f9fafb;
+  }
+  .attempt-table th, .attempt-table td {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 0.95em;
+  }
+  .attempt-table tr:nth-child(even) {
+    background: #fdfdfd;
+  }
+  .correct {
+    color: #16a34a;
+    font-weight: 700;
+  }
+  .incorrect {
+    color: #dc2626;
+    font-weight: 700;
+  }
+
+  /* Pagination */
+  .pagination {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+  }
+  .pagination a {
+    padding: 10px 16px;
+    background: #4c8bfa;
+    color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+  .pagination a:hover {
+    background: #3973d1;
+  }
+
+  /* Video section */
+  .video-section {
+    margin-top: 40px;
+    background: #f3f4f6;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .video-section h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .video-section p {
+    margin-bottom: 15px;
+  }
+
+  .btn-logout-icon {
+  padding: 8px 16px;
+  background: #ef4444;
+  color: white !important;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-logout-icon:hover {
+  background: #dc2626;
+}
+
+.btn-pmore-icon {
+  padding: 8px 16px;
+  background: #0c88a7;
+  color: white !important;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-pmore-icon:hover {
+  background: #40bb14;
+}
+
+</style>
+
+<div class="dashboard-container">
+
+  <h1>Your Attempts</h1>
+
+  <div class="action-links">
+    <a href="{{ url_for('home') }}" class = "btn-pmore-icon">Practice More</a>
+    <a href="{{ url_for('logout') }}" class = "btn-logout-icon">Logout</a>
+  </div>
+
+  {% if attempts %}
+  <table class="attempt-table">
+    <thead>
+      <tr>
+        <th>When</th>
+        <th>Problem</th>
+        <th>Your Answer</th>
+        <th>Correct Answer</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for attempt in attempts %}
+      <tr>
+        <td>{{ attempt.timestamp.strftime('%Y-%m-%d %H:%M:%S') if attempt.timestamp else '' }}</td>
+        <td>{{ attempt.a }} + {{ attempt.b }}</td>
+        <td>{{ attempt.student_answer }}</td>
+        <td>{{ attempt.correct_answer }}</td>
+        <td class="{{ 'correct' if attempt.is_correct else 'incorrect' }}">
+          {{ "✅ Correct" if attempt.is_correct else "❌ Incorrect" }}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <div>Page {{ pagination.page }} of {{ pagination.pages or 1 }}</div>
+    <div>
+      {% if pagination.has_prev %}
+        <a href="{{ url_for('dashboard', page=pagination.prev_num) }}">« Prev</a>
+      {% endif %}
+      {% if pagination.has_next %}
+        <a href="{{ url_for('dashboard', page=pagination.next_num) }}">Next »</a>
+      {% endif %}
+    </div>
+  </div>
+
+  {% else %}
+    <p>No attempts yet. Try a problem first!</p>
+  {% endif %}
+
+  <!-- Video Section -->
+  <div class="video-section">
+    <h2>Addition Explained</h2>
+    <p>Watch this quick video to see how addition works:</p>
+    <video width="100%" height="315" controls>
+      <source src="{{ url_for('static', filename='assets/addition.mp4') }}" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+</div>
+
+{% endblock %}

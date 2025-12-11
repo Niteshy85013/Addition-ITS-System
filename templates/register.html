@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .auth-container {
+        max-width: 400px;
+        margin: 60px auto;
+        background: #ffffff;
+        padding: 35px;
+        border-radius: 18px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        font-family: "Inter", sans-serif;
+    }
+
+    .auth-container h2 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #222;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+        text-align: left;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 14px;
+        border-radius: 12px;
+        border: 1px solid #ddd;
+        font-size: 15px;
+        outline: none;
+        transition: 0.2s ease;
+        background: #f9f9f9;
+    }
+
+    .form-group input:focus {
+        border-color: #4c8bfa;
+        background: #fff;
+        box-shadow: 0 0 0 3px rgba(76, 139, 250, 0.2);
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        margin-top: 10px;
+        background: #4c8bfa;
+        border: none;
+        border-radius: 12px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background: #3a73d8;
+    }
+
+    .auth-bottom {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .auth-bottom a {
+        color: #4c8bfa;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .auth-bottom a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="auth-container">
+    <h2>Create Account</h2>
+
+    <form method="POST">
+        <div class="form-group">
+            <input type="email" name="email" placeholder="Enter your email" required />
+        </div>
+
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Create a password" required />
+        </div>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <p class="auth-bottom">
+        Already have an account?
+        <a href="{{ url_for('login') }}">Log in</a>
+    </p>
+</div>
+
+{% endblock %}
