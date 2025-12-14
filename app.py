@@ -99,7 +99,7 @@ def dashboard():
     pagination = (
         Attempt.query.filter_by(user_id=current_user.id)
         .order_by(Attempt.timestamp.desc())
-        .paginate(page=page, per_page=per_page, error_out=False)
+        .paginate(page=page, per_page=5, error_out=False)
     )
     return render_template(
         'dashboard.html',

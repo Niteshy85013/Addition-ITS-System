@@ -11,7 +11,7 @@
   }
 
   body {
-    background: radial-gradient(circle at top, #1f2937, #020617);
+    background: radial-gradient(circle at top, #020617, #020617);
     font-family: 'Inter', sans-serif;
     color: #e5e7eb;
   }
@@ -23,7 +23,7 @@
   justify-content: center; /* centers both horizontally if needed */
   align-items: flex-start; /* align top edges */
   gap: 20px; /* space between dashboard and video */
-  margin-left: -28rem; /* adjust as needed to center on page */
+  margin-left: -30rem; /* adjust as needed to center on page */
 
 }
 
@@ -37,6 +37,11 @@
   border-radius: 22px;
   box-shadow: 0 25px 60px rgba(0,0,0,0.6);
   border: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between; /* text left, buttons right */
+  align-items: center; /* vertically center */
+  margin-bottom: 30px; /* spacing below */
+  flex-wrap: wrap;
 }
 
 /* Video Section */
@@ -65,39 +70,39 @@
 
   /* Action Buttons */
   .action-links {
-    display: flex;
-    gap: 14px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-  }
+  display: flex;
+  gap: 14px; /* space between buttons */
+}
 
   .btn-pmore-icon {
-    padding: 10px 18px;
-    background: linear-gradient(135deg, #22c55e, #16a34a);
-    color: white !important;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.25s ease;
-  }
-  .btn-pmore-icon:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(34,197,94,0.4);
-  }
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white !important;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
 
-  .btn-logout-icon {
-    padding: 10px 18px;
-    background: linear-gradient(135deg, #ef4444, #dc2626);
-    color: white !important;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.25s ease;
-  }
-  .btn-logout-icon:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(239,68,68,0.4);
-  }
+.btn-pmore-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(34,197,94,0.4);
+}
+
+.btn-logout-icon {
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white !important;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.btn-logout-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(239,68,68,0.4);
+}
 
   /* Table Styling */
   .attempt-table {
@@ -167,8 +172,6 @@
     box-shadow: 0 10px 24px rgba(59,130,246,0.4);
   }
 
-  
-
   .video-section h2 {
     font-size: 1.6em;
     font-weight: 700;
@@ -195,7 +198,7 @@
 <div class="main-container">
 <div class="dashboard-container">
 
-  <h1>Your Attempts</h1>
+  <h1>Your Progress Report</h1>
 
   <div class="action-links">
     <a href="{{ url_for('home') }}" class="btn-pmore-icon">Practice More</a>
