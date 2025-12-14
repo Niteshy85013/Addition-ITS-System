@@ -37,7 +37,7 @@ def infer_base_iri(graph: Graph) -> str:
     if iri:
         return iri if iri.endswith("#") else iri + "#"
 
-    return "http://www.semanticweb.org/bhuwan/ontologies/2025/11/math-addition#"
+    return "http://www.semanticweb.org/nitesh/ontologies/2025/11/math-addition#"
 
 
 # Extract base IRI and namespace
