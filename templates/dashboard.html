@@ -64,7 +64,7 @@
   h1 {
     font-size: 2.2em;
     font-weight: 700;
-    color: #f9fafb;
+    color: #f2f0ef;
     margin-bottom: 20px;
   }
 
@@ -156,6 +156,12 @@
     align-items: center;
     font-weight: 600;
     color: #9ca3af;
+    
+  }
+  .video-text-tag{
+    align-items: center;
+display: flex;
+justify-content: space-around;
   }
 
   .pagination a {
@@ -174,9 +180,10 @@
 
   .video-section h2 {
     font-size: 1.6em;
-    font-weight: 700;
+    font-family: Georgia;
     margin-bottom: 10px;
-    color: #f9fafb;
+    color: #e8ec08;
+    font-weight: bold;
   }
 
   .video-section p {
@@ -187,6 +194,10 @@
   video {
     border-radius: 14px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  .video-text-demo{
+    color: #e5e7eb;
+    font-style: italic;
   }
 
   @media (max-width: 768px) {
@@ -201,7 +212,7 @@
   <h1>📜Your Progress Report</h1>
 
   <div class="action-links">
-    <a href="{{ url_for('home') }}" class="btn-pmore-icon">Practice More</a>
+    <a href="{{ url_for('index') }}" class="btn-pmore-icon">Practice More</a>
     <a href="{{ url_for('logout') }}" class="btn-logout-icon">Logout</a>
   </div>
 
@@ -251,8 +262,8 @@
 
 </div>
 <div class="video-section">
-    <h2>Addition Explained</h2>
-    <p>Watch this quick video to understand addition concepts:</p>
+    <h2 class="video-text-tag">Watch Video Now!</h2>
+    <p class="video-text-demo">Watch the video now before you start to understand about the website and the Mathematical addition concepts. </p>
     <video width="100%" height="315" controls>
       <source src="{{ url_for('static', filename='assets/addition.mp4') }}" type="video/mp4" />
       Your browser does not support the video tag.

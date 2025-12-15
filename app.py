@@ -82,16 +82,20 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 # === Routes ===
-@app.route('/')
+# @app.route('/')
+# @login_required
+# def home():
+#     return render_template('dashboard.html')
+
+@app.route('/index')
 @login_required
-def home():
+def index():
     import random
     a = random.randint(0, 10)
     b = random.randint(0, 10)
     return render_template('index.html', a=a, b=b)
 
-
-@app.route('/dashboard')
+@app.route('/')
 @login_required
 def dashboard():
     page = request.args.get('page', 1, type=int)
@@ -119,7 +123,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         login_user(user)
-        return redirect(url_for('home'))
+        return redirect(url_for('dashboard'))
     return render_template('register.html')
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -130,7 +134,7 @@ def login():
         user = User.query.filter_by(email=email).first()
         if user and check_password_hash(user.password_hash, password):
             login_user(user)
-            return redirect(url_for('home'))
+            return redirect(url_for('dashboard'))
         flash('Invalid email or password')
     return render_template('login.html')
 
