@@ -194,7 +194,7 @@ def check_answer():
     return jsonify({
         'correct': is_correct,
         'answer': correct,
-        'message': f"✅ Correct! {a} + {b} = {correct}" if is_correct else f"❌ Try again. {a} + {b} = {correct}"
+        'message': f"✅ Correct: {a} + {b} = {correct}" if is_correct else f"❌ Incorrect please try again. {a} + {b} = {correct}"
     })
 
 # === Create DB on first run ===
