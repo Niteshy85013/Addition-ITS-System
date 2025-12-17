@@ -37,7 +37,7 @@ def infer_base_iri(graph: Graph) -> str:
     if iri:
         return iri if iri.endswith("#") else iri + "#"
 
-    return "http://www.semanticweb.org/nitesh/ontologies/2025/11/math-addition#"
+    return "http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/math-addition#"
 
 
 # Extract base IRI and namespace
@@ -164,17 +164,17 @@ def check_answer():
     db.session.add(attempt)
     db.session.commit()
 
-    # Optional: Generate OWL-style Turtle for this attempt
+    # To Generate OWL-style Turtle for this attempt
     g = Graph()
     g.bind("math", MATH)
 
-    # Create instance URIs (you can use attempt.id for uniqueness)
+    # Create instance URIs (attempt.id for uniqueness)
     expr = MATH[f"Expr_{attempt.id}"]
     num_a = MATH[f"Num_{a}_{attempt.id}"]
     num_b = MATH[f"Num_{b}_{attempt.id}"]
     num_res = MATH[f"Num_{student_ans}_{attempt.id}"]
 
-    # Use classes/properties from YOUR ontology
+    # Classes/properties from ontology
     g.add((expr, RDF.type, MATH.AdditionExpression))
     g.add((expr, MATH.hasAdded, num_a))
     g.add((expr, MATH.hasAdded, num_b))
@@ -203,3 +203,4 @@ with app.app_context():
 
 if __name__ == '__main__':
     app.run(debug=True)
+

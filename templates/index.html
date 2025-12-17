@@ -8,6 +8,30 @@
         font-family: "Inter", sans-serif;
     }
 
+    .logic-box {
+  margin-top: 24px;
+  padding: 16px 18px;
+  background: rgba(17, 24, 39, 0.85);
+  border-left: 4px solid #6366f1;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.logic-title {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e5e7eb;
+  letter-spacing: 0.3px;
+}
+
+.logic-text {
+  margin: 0;
+  font-size: 0.82rem;   /* smaller text */
+  line-height: 1.6;
+  color: #9ca3af;
+}
+
     .tutor-container {
         width: 45rem;
         max-width: 45rem;
@@ -296,7 +320,16 @@
         <input type="number" name="answer" class="form-input" required placeholder="Answer" />
         <button class="submit-btn" type="submit">Check Answer</button>
     </form>
-    <div id="feedback"></div>
+    <div id="feedback" class="logic-box">
+  <h4 class="logic-title">Logic Behind the Output</h4>
+  <p class="logic-text">
+    When you submit your answer, the application checks whether it matches the correct sum of {{ a }} and {{ b }}. 
+         Like a + b.
+    If your answer is correct, a confirmation message is displayed and a new problem is generated.
+    If the answer is incorrect, you are prompted to try again, with the correct solution shown for learning purposes.
+  </p>
+</div>
+
 </div>
 <script>
     document.getElementById("answerForm").onsubmit = async (e) => {
