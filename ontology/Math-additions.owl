@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2/"
+     xml:base="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#integer -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#givesFeedback -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#givesFeedback">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#givesFeedback"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Answer"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#givesFeedback"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Feedback"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasAnswer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasAnswer">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasAnswer"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Question"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasAnswer"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Answer"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasOperand -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasOperand">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasOperand"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Addition"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasOperand"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Operand"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasQuestion -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasQuestion">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasQuestion"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Addition"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasQuestion"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Question"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasResult -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasResult">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasResult"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Addition"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasResult"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Result"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#correctAnswer -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#correctAnswer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Answer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#feedbackText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#feedbackText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#hasValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Number"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#userInput -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#userInput">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Answer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Addition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Addition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Answer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Answer"/>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Feedback -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Feedback"/>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Number -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Number"/>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Operand -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Operand">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Number"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Question -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Question"/>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Result -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Result">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#Number"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#addition1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#addition1"/>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#operand1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#operand1"/>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#operand2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#operand2"/>
+    
+
+
+    <!-- http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#result1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#result1"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

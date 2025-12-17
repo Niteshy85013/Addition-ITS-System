@@ -23,11 +23,6 @@ ONTOLOGY.parse(Config.ONTOLOGY_PATH, format="xml")  # or "turtle"
 
 
 def infer_base_iri(graph: Graph) -> str:
-    """
-    Try to recover the ontology base IRI from namespace bindings first, then fall back
-    to the graph identifier, and finally to a sensible default. Ensures the result
-    always ends with '#'.
-    """
     for prefix, uri in graph.namespaces():
         if prefix in ("", None, "math-addition"):
             iri = str(uri)
@@ -37,7 +32,7 @@ def infer_base_iri(graph: Graph) -> str:
     if iri:
         return iri if iri.endswith("#") else iri + "#"
 
-    return "http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/math-addition#"
+    return "http://www.semanticweb.org/niteshyadav_ysj/ontologies/2025/11/untitled-ontology-2#"
 
 
 # Extract base IRI and namespace

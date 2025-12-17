@@ -227,6 +227,23 @@
   background: white;
   box-shadow: 0 4px 12px rgba(218, 139, 11, 0.4);
 }
+/* ===== Footer ===== */
+.footer {
+  width: 100%;
+  padding: 14px 0;
+  text-align: center;
+  background: rgba(2, 6, 23, 0.95);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+.footer span {
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
 
 .nav-title {
   font-size: 20px;
@@ -345,5 +362,9 @@
         }
     };
 </script>
+
+<footer class="footer">
+  © {{ current_year | default(2025) }} <span>Nitesh Yadav</span>. All rights reserved.
+</footer>
 
 {% endblock %}

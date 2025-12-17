@@ -200,6 +200,23 @@ justify-content: space-around;
     color: #e5e7eb;
     font-style: italic;
   }
+  /* ===== Footer ===== */
+.footer {
+  width: 100%;
+  padding: 14px 0;
+  text-align: center;
+  background: rgba(2, 6, 23, 0.95);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+.footer span {
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
   /* ===== Static Navbar ===== */
 .navbar {
   position: fixed;
@@ -329,5 +346,9 @@ justify-content: space-around;
     </video>
   </div>
   </div>
+
+  <footer class="footer">
+  © {{ current_year | default(2025) }} <span>Nitesh Yadav</span>. All rights reserved.
+</footer>
 
 {% endblock %}
